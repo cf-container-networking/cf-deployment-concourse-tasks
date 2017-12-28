@@ -121,7 +121,7 @@ function main() {
       bbl plan \
         ${name_flag} \
         ${ops_arguments} \
-        --lb-type=cf \
+        --lb-type=${LB_TYPE} \
         --lb-cert="${bbl_cert_path}" \
         ${bbl_cert_chain_flag} \
         --lb-key="${bbl_key_path}" \
@@ -131,7 +131,7 @@ function main() {
       bbl --debug up \
         ${name_flag} \
         ${ops_arguments} \
-        --lb-type=cf \
+        --lb-type=${LB_TYPE} \
         --lb-cert="${bbl_cert_path}" \
         ${bbl_cert_chain_flag} \
         --lb-key="${bbl_key_path}" \

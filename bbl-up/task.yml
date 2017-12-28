@@ -73,6 +73,10 @@ params:
   # - Can be either the key content or a path to the key
   # - If a path is provided, path is relative to the BBL_STATE_DIR
 
+  LB_TYPE: cf
+  # - Optional
+  # - Allows flexibility to bbl up a non-cf environment, such as concourse
+
   LB_DOMAIN:
   # - Required if `IS_BOSH_LITE` is false
   # - The domain which bbl will register
