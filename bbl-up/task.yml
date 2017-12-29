@@ -106,6 +106,12 @@ params:
   # - Ops will be applied in the order they're listed
   # - Paths are relative to root of the `ops-files` input
 
+  IS_CONCOURSE: false
+  # - Optional
+  # - Set to `true` to deploy bosh in a concourse configuration and create concourse lbs
+  # - Should only set one of IS_CONCOURSE and IS_BOSH_LITE to true; if both set, IS_BOSH_LITE
+  #   takes precedence
+
   IS_BOSH_LITE: false
   # - Optional
   # - Set to `true` to deploy bosh in a lite configuration
