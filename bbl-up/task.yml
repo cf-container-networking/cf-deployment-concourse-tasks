@@ -53,7 +53,7 @@ params:
   # - Must be either `aws` or `gcp`
 
   BBL_LB_CERT:
-  # - Required if `IS_BOSH_LITE` is false
+  # - Required if `IS_BOSH_LITE` and `IS_CONCOURSE` is false
   # - PEM encoded certificate to be associated with the load balancer
   #   for SSL termination
   # - Can be either the certificate content or a path to the certificate
@@ -67,18 +67,14 @@ params:
   # - If a path is provided, path is relative to the BBL_STATE_DIR
 
   BBL_LB_KEY:
-  # - Required if `IS_BOSH_LITE` is false
+  # - Required if `IS_BOSH_LITE` and `IS_CONCOURSE` is false
   # - PEM-encoded private key to be used for TLS termination on the load
   #   balancer.
   # - Can be either the key content or a path to the key
   # - If a path is provided, path is relative to the BBL_STATE_DIR
 
-  LB_TYPE: cf
-  # - Optional
-  # - Allows flexibility to bbl up a non-cf environment, such as concourse
-
   LB_DOMAIN:
-  # - Required if `IS_BOSH_LITE` is false
+  # - Required if `IS_BOSH_LITE` and `IS_CONCOURSE` is false
   # - The domain which bbl will register
 
   BBL_ENV_NAME:
