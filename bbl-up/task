@@ -11,7 +11,7 @@ function check_fast_fails() {
       echo "\$IS_BOSH_LITE requires \$BBL_IAAS to be set to 'gcp'"
       exit 1
     fi
-  elif [ "${IS_CONCOURSE}" == false ]; then
+  elif [ "${IS_CONCOURSE}" == "false" ]; then
     if [ -z "${LB_DOMAIN}" ]; then
       echo "\$LB_DOMAIN is a required parameter.  Please set the domain."
       exit 1
@@ -87,7 +87,7 @@ function main() {
 
   mkdir -p "env-repo/${BBL_STATE_DIR}"
   pushd "env-repo/${BBL_STATE_DIR}"
-    if [ "${IS_BOSH_LITE}" != "true" ]; then
+    if [ "${IS_BOSH_LITE}" != "true" ] && [ "${IS_CONCOURSE}" != "true" ]; then
       local bbl_cert_chain_flag
       bbl_cert_chain_flag=""
       local bbl_cert_path
